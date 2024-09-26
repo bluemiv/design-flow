@@ -1,25 +1,26 @@
 {
-  "name": "withus",
-  "packageManager": "yarn@3.2.2",
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
-  },
+  "name": "design-flow",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "web": "yarn workspace @withus/web",
-    "server": "yarn workspace @withus/server",
-    "docker:start": "docker-compose up -d",
-    "docker:stop": "docker-compose down",
-    "docker:logs": "docker-compose logs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.13"
   },
   "devDependencies": {
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.47",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
-  },
-  "engines": {
-    "node": ">=16.15.1"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13"
   }
 }
