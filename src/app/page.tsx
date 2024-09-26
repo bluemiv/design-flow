@@ -1,10 +1,9 @@
 import Room from '@/components/Room';
-import CollaborativeApp from '@/components/CollaborativeApp';
 
 export default function Page() {
   return (
     <Room>
-      <CollaborativeApp />
+      <h1 className="text-xl font-extrabold">Design Blocks</h1>
     </Room>
   );
 }
