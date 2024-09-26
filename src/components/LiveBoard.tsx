@@ -59,11 +59,6 @@ export default function LiveBoard() {
             updateMyPresence({ message });
             setCursorState({ ...cursorState, message });
           }}
-          onKeyDownInput={(key) => {
-            if (key === 'Enter') {
-              setCursorState({ ...cursorState, mode: CURSOR_MODE.HIDDEN });
-            }
-          }}
         />
       )}
       {myPresence?.cursor && (

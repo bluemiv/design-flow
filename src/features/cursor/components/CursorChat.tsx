@@ -8,15 +8,9 @@ interface TProps {
   cursor: { x: number; y: number };
   cursorState: TCursorState;
   onChangeMessage: (message: string) => void;
-  onKeyDownInput: (key: string) => void;
 }
 
-export default function CursorChat({
-  cursor,
-  cursorState,
-  onChangeMessage,
-  onKeyDownInput,
-}: TProps) {
+export default function CursorChat({ cursor, cursorState, onChangeMessage }: TProps) {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -28,10 +22,6 @@ export default function CursorChat({
     onChangeMessage(e.target.value);
   };
 
-  const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    onKeyDownInput(e.key);
-  };
-
   return (
     <div
       className="absolute top-0 left-0"
@@ -40,14 +30,13 @@ export default function CursorChat({
       {cursorState.mode === CURSOR_MODE.CHAT && (
         <>
           <Icons.Cursor style={{ color: '#DDDDDD' }} />
-          <ChatBallon className="absolute left-2 top-5 w-full">
+          <ChatBallon className="absolute left-2 top-5">
             <textarea
               ref={textareaRef}
               rows={1}
               autoFocus
               value={cursorState.message}
               onChange={onChange}
-              onKeyDown={onKeyDown}
               className="border-none bg-transparent text-white outline-none w-full break-all resize-none h-auto overflow-hidden"
               placeholder="메시지 작성해보세요"
             />
