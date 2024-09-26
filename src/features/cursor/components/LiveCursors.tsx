@@ -14,7 +14,8 @@ export default function LiveCursors({ others }: TLiveCursorProps) {
         color={CURSOR_COLORS[Number(connectionId) % CURSOR_COLORS.length]}
         x={presence.cursor.x}
         y={presence.cursor.y}
-        message={presence.cursor.message}
+        message={presence.message}
+        className="transition-all duration-150"
       />
     );
   });

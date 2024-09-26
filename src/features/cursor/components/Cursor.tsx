@@ -1,20 +1,23 @@
 import Icons from '@/components/Icons';
+import ChatBallon from '@/features/chat/components/ChatBallon';
+import { TPropsWithClassName } from '@/types';
 
 interface TProps {
   color: string;
   x: number;
   y: number;
-  message: string;
+  message?: string;
 }
 
-export default function Cursor({ color, x, y, message }: TProps) {
-  console.log(color);
+export default function Cursor({ color, x, y, message, className }: TPropsWithClassName<TProps>) {
   return (
-    <div
-      className="pointer-events-none absolute top-0 left-0"
-      style={{ transform: `translate(${x}px, ${y}px)` }}
-    >
+    <div className={`absolute ${className}`} style={{ top: `${y}px`, left: `${x}px` }}>
       <Icons.Cursor style={{ color }} />
+      {message && (
+        <ChatBallon className="absolute left-2 top-5" style={{ background: color }}>
+          {message}
+        </ChatBallon>
+      )}
     </div>
   );
 }

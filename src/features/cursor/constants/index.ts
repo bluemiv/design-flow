@@ -1,12 +1,15 @@
 export const CURSOR_COLORS = [
-  '#87CEEB',
-  '#98FF98',
-  '#F08080',
-  '#FFF44F',
-  '#FFDAB9',
-  '#E6E6FA',
-  '#FFB6C1',
-  '#FFE4B5',
-  '#F0E68C',
-  '#AFEEEE',
+  '#0e0e9d',
+  '#8B0000',
+  '#006400',
+  '#2F4F4F',
+  '#651496',
+  '#800080',
+  '#FF4500',
+  '#B22222',
 ];
+
+export const CURSOR_MODE = {
+  HIDDEN: 'HIDDEN',
+  CHAT: 'CHAT',
+};

@@ -1,9 +1,9 @@
-import Live from '@/components/Live';
+import LiveBoard from '@/components/LiveBoard';
 
 export default function Page() {
   return (
     <div className="w-full h-screen">
-      <Live />
+      <LiveBoard />
     </div>
   );
 }

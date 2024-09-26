@@ -6,4 +6,7 @@ export type TPropsWithClassName<T = unknown> = T & { className?: string };
 
 export type TPropsWithStyle<T = unknown> = T & { style?: CSSProperties };
 
-export type TPropsWithComponent<T = unknown> = T & TPropsWithChildren & TPropsWithClassName;
+export type TPropsWithComponent<T = unknown> = T &
+  TPropsWithChildren &
+  TPropsWithClassName &
+  TPropsWithStyle;
